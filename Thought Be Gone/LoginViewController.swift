@@ -69,6 +69,7 @@ class LoginViewController: UIViewController {
                 self.presentAlert(alert: err.localizedDescription)
             }
             print("Sign up successful")
+            self.performSegue(withIdentifier: "moveToSnaps", sender: nil)
         }
     }
     
@@ -80,6 +81,7 @@ class LoginViewController: UIViewController {
                 self.presentAlert(alert: err.localizedDescription)
             }
             print("Signed in successful")
+            self.performSegue(withIdentifier: "moveToSnaps", sender: nil)
         }
     }
     
