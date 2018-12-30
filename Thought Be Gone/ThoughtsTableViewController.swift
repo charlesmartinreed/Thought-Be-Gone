@@ -13,10 +13,6 @@ class ThoughtsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //title
-        navigationController?.navigationItem.title = "Gather your thoughts"
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(handleAddThoughtButtonTapped))
     }
 
     // MARK: - Table view data source

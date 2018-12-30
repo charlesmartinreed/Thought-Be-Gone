@@ -67,11 +67,6 @@ class SelectPictureViewController: UIViewController, UIImagePickerControllerDele
     }
     
     @IBAction func continueButtonTapped(_ sender: UIButton) {
-        
-        //MARK:- DELETE THIS BEFORE PRODUCTION RELEASE
-        messageTextField.text = "test"
-        imageAdded = true
-        
         //require that there's an image and that thre's a message
         if let message = messageTextField.text {
             if imageAdded && message != ""{
@@ -119,6 +114,7 @@ class SelectPictureViewController: UIViewController, UIImagePickerControllerDele
         if let downloadURL = sender as? String {
             if let selectVC = segue.destination as? SelectReceipientViewController {
                 selectVC.downloadURL = downloadURL
+                selectVC.thoughtDescription = messageTextField.text! //safe to use !, because we've already ensured the contents are not nil or empty BEFORE calling the segue
             }
         }
     }

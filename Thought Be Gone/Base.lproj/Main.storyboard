@@ -86,7 +86,7 @@
             </objects>
             <point key="canvasLocation" x="-201" y="-186"/>
         </scene>
-        <!--Thoughts Table View Controller-->
+        <!--Thoughts-->
         <scene sceneID="ruC-Ul-94I">
             <objects>
                 <tableViewController id="7Ia-hS-SVH" customClass="ThoughtsTableViewController" customModule="Thought_Be_Gone" customModuleProvider="target" sceneMemberID="viewController">
@@ -109,7 +109,7 @@
                             <outlet property="delegate" destination="7Ia-hS-SVH" id="P9R-Go-Ewd"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="CMd-BU-Zzo">
+                    <navigationItem key="navigationItem" title="Thoughts" id="CMd-BU-Zzo">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="a36-zb-Xpu">
                             <connections>
                                 <action selector="logoutButtonTapped:" destination="7Ia-hS-SVH" id="4Hh-VC-QOa"/>
