@@ -34,12 +34,12 @@ class ThoughtsTableViewController: UITableViewController {
         }
     }
     
-    @IBAction func handleAddThoughtButtonTapped() {
-        //needs:
-        //1. what picture to send
-        //2. what message to send with it
-        //3. who to send message to
-    }
+//    @IBAction func handleAddThoughtButtonTapped() {
+//        //needs:
+//        //1. what picture to send
+//        //2. what message to send with it
+//        //3. who to send message to
+//    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections

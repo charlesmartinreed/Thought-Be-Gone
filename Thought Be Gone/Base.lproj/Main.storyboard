@@ -124,7 +124,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iCI-nP-Avm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1806" y="96"/>
+            <point key="canvasLocation" x="1113" y="577"/>
         </scene>
         <!--Select Picture View Controller-->
         <scene sceneID="bY0-W0-NIp">
@@ -147,7 +147,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vl-8T-iex">
-                                <rect key="frame" x="176" y="523" width="62" height="30"/>
+                                <rect key="frame" x="176" y="513" width="62" height="30"/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
                                     <action selector="continueButtonTapped:" destination="NtR-4N-b5u" eventType="touchUpInside" id="Agr-LW-PoY"/>
@@ -162,24 +162,17 @@
                             <constraint firstItem="5vl-8T-iex" firstAttribute="centerX" secondItem="S4b-zh-Pw5" secondAttribute="centerX" id="QNy-X4-n57"/>
                             <constraint firstItem="Iwv-dz-GMZ" firstAttribute="leading" secondItem="1Wb-HL-QYK" secondAttribute="leading" id="VlU-6o-zxg"/>
                             <constraint firstItem="1Wb-HL-QYK" firstAttribute="trailing" secondItem="uTf-5M-ebl" secondAttribute="trailing" constant="20" id="W4a-nB-A3M"/>
-                            <constraint firstItem="5vl-8T-iex" firstAttribute="top" secondItem="uTf-5M-ebl" secondAttribute="bottom" constant="42" id="dd9-lT-Acl"/>
+                            <constraint firstItem="5vl-8T-iex" firstAttribute="top" secondItem="uTf-5M-ebl" secondAttribute="bottom" constant="32" id="dd9-lT-Acl"/>
                             <constraint firstItem="uTf-5M-ebl" firstAttribute="top" secondItem="Iwv-dz-GMZ" secondAttribute="bottom" constant="8" id="lPy-z7-V1c"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1Wb-HL-QYK"/>
                     </view>
                     <navigationItem key="navigationItem" id="xOR-P7-0f7">
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="camera" id="2Ca-Fx-Cxf">
-                                <connections>
-                                    <action selector="selectCameraButtonTapped:" destination="NtR-4N-b5u" id="4z2-Rc-X6K"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="organize" id="3F5-wR-knh">
-                                <connections>
-                                    <action selector="selectPhotoButtonTapped:" destination="NtR-4N-b5u" id="2PV-cF-6x8"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="2Ca-Fx-Cxf">
+                            <connections>
+                                <action selector="selectCameraButtonTapped:" destination="NtR-4N-b5u" id="4z2-Rc-X6K"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="Iwv-dz-GMZ" id="Ii2-aM-hiO"/>
@@ -188,7 +181,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQc-XU-Y14" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2718.840579710145" y="-367.63392857142856"/>
+            <point key="canvasLocation" x="1906" y="-186"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fhf-d2-xdA">
@@ -206,7 +199,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yd7-Tz-5T1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1024.6376811594205" y="95.758928571428569"/>
+            <point key="canvasLocation" x="333" y="577"/>
         </scene>
     </scenes>
     <resources>
