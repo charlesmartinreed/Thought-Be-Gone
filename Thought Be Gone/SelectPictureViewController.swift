@@ -89,21 +89,39 @@ class SelectPictureViewController: UIViewController, UIImagePickerControllerDele
         if let image = imageView.image {
             if let imageData = image.jpegData(compressionQuality: 0.2) {
                 //NSUUID = universally unique ID.
-                imagesFolder.child("\(NSUUID().uuidString).jpg").putData(imageData, metadata: nil) { (metadata, error) in
+                let imageName = String("\(NSUUID().uuidString).jpg")
+                let imageRef = Storage.storage().reference().child("images/\(imageName)")
+                imagesFolder.child(imageName).putData(imageData, metadata: nil) { (metadata, error) in
                     if let err = error {
                         print("Unable to save image")
                         self.displayAlert(message: err.localizedDescription)
                     } else {
                         //A-OK! Segue to the next view controller
+                        imageRef.downloadURL(completion: { (url, error) in
+                            if let err = error {
+                                print("Unable to obtain URL")
+                                self.displayAlert(message: err.localizedDescription)
+                            } else {
+                                if let downloadURL = url?.absoluteString {
+                                    print(downloadURL)
+                                    self.performSegue(withIdentifier: "selectReceiverSegue", sender: downloadURL)
+                                    }
+                                }
+                            })
+                        }
                     }
                 }
             }
-            
-            
         }
-        
-    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //make sure we can get the download URL
+        if let downloadURL = sender as? String {
+            if let selectVC = segue.destination as? SelectReceipientViewController {
+                selectVC.downloadURL = downloadURL
+            }
+        }
+    }
 }
 
 //extension SelectPictureViewController: UIImagePickerControllerDelegate {

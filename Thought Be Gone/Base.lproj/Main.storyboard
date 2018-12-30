@@ -126,6 +126,34 @@
             </objects>
             <point key="canvasLocation" x="1113" y="577"/>
         </scene>
+        <!--Select Receipient View Controller-->
+        <scene sceneID="ciN-yK-8Te">
+            <objects>
+                <tableViewController id="sIB-Yg-gG2" customClass="SelectReceipientViewController" customModule="Thought_Be_Gone" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6bS-Cd-d29">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="bNO-Zo-nZv">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bNO-Zo-nZv" id="sXt-DX-BvT">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="sIB-Yg-gG2" id="uaA-BS-ACI"/>
+                            <outlet property="delegate" destination="sIB-Yg-gG2" id="iMv-hg-Y1c"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AjA-Fr-w9f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2897" y="-186"/>
+        </scene>
         <!--Select Picture View Controller-->
         <scene sceneID="bY0-W0-NIp">
             <objects>
@@ -177,6 +205,7 @@
                     <connections>
                         <outlet property="imageView" destination="Iwv-dz-GMZ" id="Ii2-aM-hiO"/>
                         <outlet property="messageTextField" destination="uTf-5M-ebl" id="rU6-yi-ktA"/>
+                        <segue destination="sIB-Yg-gG2" kind="show" identifier="selectReceiverSegue" id="rng-Cb-Eaq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQc-XU-Y14" userLabel="First Responder" sceneMemberID="firstResponder"/>

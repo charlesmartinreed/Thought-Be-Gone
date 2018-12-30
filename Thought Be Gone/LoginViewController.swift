@@ -67,9 +67,13 @@ class LoginViewController: UIViewController {
             if let err = error {
                 print("Unable to sign up", err.localizedDescription)
                 self.presentAlert(alert: err.localizedDescription)
+            } else {
+                if let user = authResult?.user {
+                    //add a user to the database with the user's email
+                    Database.database().reference().child("users").child(user.uid).child("email").setValue(user.email)
+                    self.performSegue(withIdentifier: "moveToSnaps", sender: nil)
+                }
             }
-            print("Sign up successful")
-            self.performSegue(withIdentifier: "moveToSnaps", sender: nil)
         }
     }
     
@@ -79,11 +83,15 @@ class LoginViewController: UIViewController {
             if let err = error {
                 print("Unable to log in", err.localizedDescription)
                 self.presentAlert(alert: err.localizedDescription)
+            } else {
+                self.performSegue(withIdentifier: "moveToSnaps", sender: nil)
+
             }
-            print("Signed in successful")
-            self.performSegue(withIdentifier: "moveToSnaps", sender: nil)
         }
     }
+    
+    //MARK:- Database schema methods
+    
     
     private func presentAlert(alert: String) {
         let ac = UIAlertController(title: "Oh no!", message: alert, preferredStyle: .alert)
