@@ -16,7 +16,7 @@
 		8CFB69DE21D6DCF6005A5506 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CFB69DD21D6DCF6005A5506 /* GoogleService-Info.plist */; };
 		8CFB69E021D83876005A5506 /* ThoughtsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFB69DF21D83876005A5506 /* ThoughtsTableViewController.swift */; };
 		8CFB69E221D83BE4005A5506 /* SelectPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFB69E121D83BE4005A5506 /* SelectPictureViewController.swift */; };
-		8CFB69E421D84551005A5506 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFB69E321D84551005A5506 /* Extension+UIView.swift */; };
+		8CFB69E421D84551005A5506 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFB69E321D84551005A5506 /* Extension+UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 		8CFB69DD21D6DCF6005A5506 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8CFB69DF21D83876005A5506 /* ThoughtsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtsTableViewController.swift; sourceTree = "<group>"; };
 		8CFB69E121D83BE4005A5506 /* SelectPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPictureViewController.swift; sourceTree = "<group>"; };
-		8CFB69E321D84551005A5506 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
+		8CFB69E321D84551005A5506 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		A18DFCE4ED19DCB2507797E6 /* Pods_Thought_Be_Gone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Thought_Be_Gone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8343C5D3BB3854F96FB5419 /* Pods-Thought Be Gone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thought Be Gone.release.xcconfig"; path = "Pods/Target Support Files/Pods-Thought Be Gone/Pods-Thought Be Gone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,7 +95,7 @@
 				8CFB69D421D6DC97005A5506 /* LaunchScreen.storyboard */,
 				8CFB69D721D6DC97005A5506 /* Info.plist */,
 				8CFB69DD21D6DCF6005A5506 /* GoogleService-Info.plist */,
-				8CFB69E321D84551005A5506 /* Extension+UIView.swift */,
+				8CFB69E321D84551005A5506 /* Extension+UIViewController.swift */,
 			);
 			path = "Thought Be Gone";
 			sourceTree = "<group>";
@@ -221,7 +221,7 @@
 			files = (
 				8CFB69E021D83876005A5506 /* ThoughtsTableViewController.swift in Sources */,
 				8CFB69E221D83BE4005A5506 /* SelectPictureViewController.swift in Sources */,
-				8CFB69E421D84551005A5506 /* Extension+UIView.swift in Sources */,
+				8CFB69E421D84551005A5506 /* Extension+UIViewController.swift in Sources */,
 				8CFB69CE21D6DC95005A5506 /* LoginViewController.swift in Sources */,
 				8CFB69CC21D6DC95005A5506 /* AppDelegate.swift in Sources */,
 			);

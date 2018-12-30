@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseStorage
 
 class SelectPictureViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -27,13 +28,6 @@ class SelectPictureViewController: UIViewController, UIImagePickerControllerDele
         
     }
     
-    //MARK:- @IBActions
-//    @IBAction func selectPhotoButtonTapped(_ sender: UIBarButtonItem) {
-//        if imagePicker != nil {
-//            imagePicker!.sourceType = .photoLibrary
-//            present(imagePicker!, animated: true, completion: nil)
-//        }
-//    }
     
     @IBAction func selectCameraButtonTapped(_ sender: UIBarButtonItem) {
         let ac = UIAlertController(title: "Choose an image", message: "", preferredStyle: .actionSheet)
@@ -73,14 +67,41 @@ class SelectPictureViewController: UIViewController, UIImagePickerControllerDele
     }
     
     @IBAction func continueButtonTapped(_ sender: UIButton) {
+        
+        //MARK:- DELETE THIS BEFORE PRODUCTION RELEASE
+        messageTextField.text = "test"
+        imageAdded = true
+        
         //require that there's an image and that thre's a message
         if let message = messageTextField.text {
             if imageAdded && message != ""{
-                // segue to the next view controller
+                uploadUserImage(image: imageView.image!)
             } else {
                 self.displayAlert(message: "You must provide both an image and a message for your thought.")
             }
         }
+    }
+    
+    fileprivate func uploadUserImage(image: UIImage) {
+        //storage folder for Firebase
+        let imagesFolder = Storage.storage().reference().child("images")
+        
+        if let image = imageView.image {
+            if let imageData = image.jpegData(compressionQuality: 0.2) {
+                //NSUUID = universally unique ID.
+                imagesFolder.child("\(NSUUID().uuidString).jpg").putData(imageData, metadata: nil) { (metadata, error) in
+                    if let err = error {
+                        print("Unable to save image")
+                        self.displayAlert(message: err.localizedDescription)
+                    } else {
+                        //A-OK! Segue to the next view controller
+                    }
+                }
+            }
+            
+            
+        }
+        
     }
     
 }
