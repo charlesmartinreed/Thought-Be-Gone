@@ -121,10 +121,55 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="PoC-sX-19p" kind="show" identifier="viewThoughtsSegue" id="ja4-6e-k5d"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iCI-nP-Avm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1113" y="577"/>
+        </scene>
+        <!--Thoughts Detail View Controller-->
+        <scene sceneID="ngm-Pr-I0r">
+            <objects>
+                <viewController id="PoC-sX-19p" customClass="ThoughtsDetailViewController" customModule="Thought_Be_Gone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZHL-lB-HdG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wp4-M5-VAi">
+                                <rect key="frame" x="0.0" y="88" width="414" height="704"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a test of whether or not the text will properly break to a newline." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHZ-0y-VxV">
+                                <rect key="frame" x="20" y="802" width="374" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="gtn-VN-4Uf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Wp4-M5-VAi" secondAttribute="trailing" id="ESh-MC-Mfr"/>
+                            <constraint firstItem="mHZ-0y-VxV" firstAttribute="bottom" secondItem="bmF-Q0-TqT" secondAttribute="bottom" constant="20" id="HV9-Ea-46Z"/>
+                            <constraint firstItem="mHZ-0y-VxV" firstAttribute="top" secondItem="Wp4-M5-VAi" secondAttribute="bottom" constant="10" id="QVI-Zr-Dov"/>
+                            <constraint firstItem="mHZ-0y-VxV" firstAttribute="leading" secondItem="bmF-Q0-TqT" secondAttribute="leading" constant="20" id="R9X-FL-iHe"/>
+                            <constraint firstItem="Wp4-M5-VAi" firstAttribute="leading" secondItem="ZHL-lB-HdG" secondAttribute="leading" id="SXx-Dz-u8q"/>
+                            <constraint firstAttribute="trailing" secondItem="mHZ-0y-VxV" secondAttribute="trailing" constant="20" id="bqn-fO-WjZ"/>
+                            <constraint firstItem="Wp4-M5-VAi" firstAttribute="top" secondItem="bmF-Q0-TqT" secondAttribute="top" id="er8-Qg-tux"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bmF-Q0-TqT"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="Wp4-M5-VAi" id="jFq-MR-5VT"/>
+                        <outlet property="messageLabel" destination="mHZ-0y-VxV" id="9Of-nk-9QP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="17r-ky-jTK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1947.826086956522" y="1054.6875"/>
         </scene>
         <!--Select Receipient View Controller-->
         <scene sceneID="ciN-yK-8Te">

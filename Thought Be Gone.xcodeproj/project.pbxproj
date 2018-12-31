@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D1291C4F70FC4B9C9572CA3 /* Pods_Thought_Be_Gone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18DFCE4ED19DCB2507797E6 /* Pods_Thought_Be_Gone.framework */; };
+		8CA3C2AC21D9A13100AA8A09 /* ThoughtsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA3C2AB21D9A13100AA8A09 /* ThoughtsDetailViewController.swift */; };
 		8CFB69CC21D6DC95005A5506 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFB69CB21D6DC95005A5506 /* AppDelegate.swift */; };
 		8CFB69CE21D6DC95005A5506 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFB69CD21D6DC95005A5506 /* LoginViewController.swift */; };
 		8CFB69D121D6DC95005A5506 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CFB69CF21D6DC95005A5506 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		5892864BD823723197B2F9BD /* Pods-Thought Be Gone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thought Be Gone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Thought Be Gone/Pods-Thought Be Gone.debug.xcconfig"; sourceTree = "<group>"; };
+		8CA3C2AB21D9A13100AA8A09 /* ThoughtsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtsDetailViewController.swift; sourceTree = "<group>"; };
 		8CFB69C821D6DC95005A5506 /* Thought Be Gone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Thought Be Gone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CFB69CB21D6DC95005A5506 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CFB69CD21D6DC95005A5506 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,43 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8CA3C2A721D99FC200AA8A09 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8CFB69CD21D6DC95005A5506 /* LoginViewController.swift */,
+				8CFB69DF21D83876005A5506 /* ThoughtsTableViewController.swift */,
+				8CFB69E121D83BE4005A5506 /* SelectPictureViewController.swift */,
+				8CFB69E521D8925F005A5506 /* SelectReceipientViewController.swift */,
+				8CA3C2AB21D9A13100AA8A09 /* ThoughtsDetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8CA3C2A821D99FF500AA8A09 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8CFB69CF21D6DC95005A5506 /* Main.storyboard */,
+				8CFB69D421D6DC97005A5506 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8CA3C2A921D9A01100AA8A09 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8CFB69E721D89E2E005A5506 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8CA3C2AA21D9A01B00AA8A09 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8CFB69E321D84551005A5506 /* Extension+UIViewController.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		8CFB69BF21D6DC94005A5506 = {
 			isa = PBXGroup;
 			children = (
@@ -91,17 +130,13 @@
 			isa = PBXGroup;
 			children = (
 				8CFB69CB21D6DC95005A5506 /* AppDelegate.swift */,
-				8CFB69CD21D6DC95005A5506 /* LoginViewController.swift */,
-				8CFB69DF21D83876005A5506 /* ThoughtsTableViewController.swift */,
-				8CFB69E121D83BE4005A5506 /* SelectPictureViewController.swift */,
-				8CFB69E521D8925F005A5506 /* SelectReceipientViewController.swift */,
-				8CFB69CF21D6DC95005A5506 /* Main.storyboard */,
+				8CA3C2A721D99FC200AA8A09 /* Controllers */,
+				8CA3C2A821D99FF500AA8A09 /* Views */,
 				8CFB69D221D6DC97005A5506 /* Assets.xcassets */,
-				8CFB69D421D6DC97005A5506 /* LaunchScreen.storyboard */,
 				8CFB69D721D6DC97005A5506 /* Info.plist */,
 				8CFB69DD21D6DCF6005A5506 /* GoogleService-Info.plist */,
-				8CFB69E321D84551005A5506 /* Extension+UIViewController.swift */,
-				8CFB69E721D89E2E005A5506 /* User.swift */,
+				8CA3C2AA21D9A01B00AA8A09 /* Extensions */,
+				8CA3C2A921D9A01100AA8A09 /* Models */,
 			);
 			path = "Thought Be Gone";
 			sourceTree = "<group>";
@@ -226,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CFB69E021D83876005A5506 /* ThoughtsTableViewController.swift in Sources */,
+				8CA3C2AC21D9A13100AA8A09 /* ThoughtsDetailViewController.swift in Sources */,
 				8CFB69E221D83BE4005A5506 /* SelectPictureViewController.swift in Sources */,
 				8CFB69E421D84551005A5506 /* Extension+UIViewController.swift in Sources */,
 				8CFB69CE21D6DC95005A5506 /* LoginViewController.swift in Sources */,
