@@ -70,18 +70,29 @@ class ThoughtsTableViewController: UITableViewController {
     //MARK:- Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return thoughts.count
+        
+        //if there are no new snaps, we'll return a single cell that we'll customize in cellForRowAt
+        if thoughts.isEmpty {
+            return 1
+        } else {
+            return thoughts.count
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = UITableViewCell()
-        let thought = thoughts[indexPath.row]
         
-        //list who the thought is sent from
-        if let thoughtsDictionary = thought.value as? NSDictionary {
-            if let fromEmail = thoughtsDictionary["from"] as? String {
-                cell.textLabel?.text = fromEmail
+        if thoughts.isEmpty {
+            //above, we only return 1 cell in this case
+            cell.textLabel?.text = "No new snaps! 🤨"
+        } else {
+            let thought = thoughts[indexPath.row]
+            
+            //list who the thought is sent from
+            if let thoughtsDictionary = thought.value as? NSDictionary {
+                if let fromEmail = thoughtsDictionary["from"] as? String {
+                    cell.textLabel?.text = fromEmail
+                }
             }
         }
         
