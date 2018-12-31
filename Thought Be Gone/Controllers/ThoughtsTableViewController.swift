@@ -76,8 +76,8 @@ class ThoughtsTableViewController: UITableViewController {
         //occurs when the user chooses a particular cell
         if segue.identifier == "viewThoughtsSegue" {
             if let destinationVC = segue.destination as? ThoughtsDetailViewController {
-                if let snap = sender as? DataSnapshot {
-                    destinationVC.snap = snap
+                if let thought = sender as? DataSnapshot {
+                    destinationVC.thought = thought
                 }
             }
         }

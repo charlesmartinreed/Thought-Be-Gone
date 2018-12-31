@@ -61,14 +61,14 @@ class SelectReceipientViewController: UITableViewController {
 
         //set up a dictionary to represent all the info a thought should have
         if let fromEmail = Auth.auth().currentUser?.email {
-            let snap = [
+            let thought = [
                 "from": fromEmail,
                 "description": thoughtDescription,
                 "imageURL": downloadURL
             ]
             
             //send the snap to the proper user by saving it to the database schema
-            Database.database().reference().child("users").child(user.uid!).child("snaps").childByAutoId().setValue(snap)
+            Database.database().reference().child("users").child(user.uid!).child("snaps").childByAutoId().setValue(thought)
             
             //once the snap has been successfully sent, pop them back
             navigationController?.popToRootViewController(animated: true)
