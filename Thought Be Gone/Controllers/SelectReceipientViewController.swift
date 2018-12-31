@@ -14,6 +14,7 @@ class SelectReceipientViewController: UITableViewController {
     //MARK:- Properties
     var thoughtDescription = ""
     var downloadURL = ""
+    var imageName = ""
     var users = [User]()
     
     override func viewDidLoad() {
@@ -64,6 +65,7 @@ class SelectReceipientViewController: UITableViewController {
             let thought = [
                 "from": fromEmail,
                 "description": thoughtDescription,
+                "imageName": imageName,
                 "imageURL": downloadURL
             ]
             

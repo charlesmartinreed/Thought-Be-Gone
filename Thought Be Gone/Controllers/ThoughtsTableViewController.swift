@@ -14,6 +14,8 @@ class ThoughtsTableViewController: UITableViewController {
     
     //MARK:- Properties
     var thoughts = [DataSnapshot]()
+    var userID: String?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +26,32 @@ class ThoughtsTableViewController: UITableViewController {
     
     private func checkForNewThoughts() {
         //get the current user's info
-        if let currentUseruUID = Auth.auth().currentUser?.uid {
-            Database.database().reference().child("users").child(currentUseruUID).child("snaps").observe(.childAdded) { (snapshot) in
+        if let currentUser = Auth.auth().currentUser {
+            userID = currentUser.uid
+            Database.database().reference().child("users").child(currentUser.uid).child("snaps").observe(.childAdded) { (snapshot) in
                 //we want to grab the number of snapshots and add them to an array
                 self.thoughts.append(snapshot)
                 self.tableView.reloadData()
             }
+            
+            //remove deleted snaps from view
+            removeDeletedSnapsFromView(userID: userID!)
+        }
+        
+    }
+    
+    private func removeDeletedSnapsFromView(userID: String) {
+        Database.database().reference().child("users").child(userID).child("snaps").observe(.childRemoved) { (snapshot) in
+            //we want to loop through each obj inside thoughts array for one that matches the one that was removed
+            for thought in self.thoughts {
+                //find the correct snap
+                var index = 0
+                if snapshot.key == thought.key {
+                    self.thoughts.remove(at: index)
+                }
+                    index += 1
+            }
+            self.tableView.reloadData()
         }
     }
     
@@ -78,6 +100,7 @@ class ThoughtsTableViewController: UITableViewController {
             if let destinationVC = segue.destination as? ThoughtsDetailViewController {
                 if let thought = sender as? DataSnapshot {
                     destinationVC.thought = thought
+                    destinationVC.currentUserUID = userID
                 }
             }
         }

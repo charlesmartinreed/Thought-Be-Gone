@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import FirebaseDatabase
-import FirebaseAuth
+import Firebase
+import FirebaseStorage
 import SDWebImage
 
 class ThoughtsDetailViewController: UIViewController {
@@ -19,6 +19,8 @@ class ThoughtsDetailViewController: UIViewController {
     
     //MARK:- Properties
     var thought: DataSnapshot?
+    var currentUserUID: String?
+    var imageName = ""
     
     //NOTE: In current app incarnation, when the user hits the nav bar back button, the thought is deleted.
     //TODO: Make time sensitive thoughts, ala Snapchat
@@ -39,12 +41,30 @@ class ThoughtsDetailViewController: UIViewController {
                     messageLabel.text = description
                     //Shoutout to SDWebImage squad
                     guard let url = URL(string: imageURL) else { return }
+                    guard let imageName = thoughtsDictionary["imageName"] as? String else { return }
+                    self.imageName = imageName
                     imageView.sd_setImage(with: url, completed: nil)
                 }
             }
         }
-
-        }
+    }
     
+    //MARK:- Self-destructing thoughts
+    override func viewWillDisappear(_ animated: Bool) {
+        //1. Delete thought from list of snaps
+        deleteThoughtFromDatabase()
+        
+        //2. Destroy the corresponding images from the service storage
+        deletePictureMessageFromDatabase()
+    }
+    
+    func deleteThoughtFromDatabase() {
+        guard let uid = currentUserUID else { return }
+        Database.database().reference().child("users").child(uid).child("snaps").child(thought!.key).removeValue()
+    }
+    
+    func deletePictureMessageFromDatabase() {
+        Storage.storage().reference().child("images").child(imageName).delete(completion: nil)
+    }
 
 }

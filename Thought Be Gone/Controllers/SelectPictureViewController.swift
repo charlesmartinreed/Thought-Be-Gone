@@ -17,6 +17,7 @@ class SelectPictureViewController: UIViewController, UIImagePickerControllerDele
     
     //MARK:- Properties
     var imagePicker: UIImagePickerController?
+    var imageName = ""
     var imageAdded = false
     
     override func viewDidLoad() {
@@ -84,9 +85,10 @@ class SelectPictureViewController: UIViewController, UIImagePickerControllerDele
         if let image = imageView.image {
             if let imageData = image.jpegData(compressionQuality: 0.2) {
                 //NSUUID = universally unique ID.
-                let imageName = String("\(NSUUID().uuidString).jpg")
-                let imageRef = Storage.storage().reference().child("images/\(imageName)")
-                imagesFolder.child(imageName).putData(imageData, metadata: nil) { (metadata, error) in
+                let img = String("\(NSUUID().uuidString).jpg")
+                imageName = img //using this to pass along with the sender to next VC
+                let imageRef = Storage.storage().reference().child("images/\(img)")
+                imagesFolder.child(img).putData(imageData, metadata: nil) { (metadata, error) in
                     if let err = error {
                         print("Unable to save image")
                         self.displayAlert(message: err.localizedDescription)
@@ -115,6 +117,7 @@ class SelectPictureViewController: UIViewController, UIImagePickerControllerDele
             if let selectVC = segue.destination as? SelectReceipientViewController {
                 selectVC.downloadURL = downloadURL
                 selectVC.thoughtDescription = messageTextField.text! //safe to use !, because we've already ensured the contents are not nil or empty BEFORE calling the segue
+                selectVC.imageName = imageName
             }
         }
     }
